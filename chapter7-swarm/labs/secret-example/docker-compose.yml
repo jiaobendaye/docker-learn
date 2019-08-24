@@ -27,7 +27,7 @@ services:
         delay: 10s
 
   mysql:
-    image: mysql
+    image: mysql:5.7
     secrets:
       - my-pw
     environment:
