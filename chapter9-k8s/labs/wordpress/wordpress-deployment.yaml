@@ -13,9 +13,9 @@ metadata:
     type: LoadBalancer
 ---
 apiVersion: v1
-kind: PersistentVolumeClain
+kind: PersistentVolumeClaim
 metadata:
-  name: wp-pv-clain
+  name: wp-pv-claim
   labels:
     app: wordpress
 spec:

@@ -51,7 +51,7 @@ spec:
         env:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
-            secretKeyRdf:
+            secretKeyRef:
               name: mysql-pass
               key: password
         ports:
