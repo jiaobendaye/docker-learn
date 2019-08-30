@@ -8,18 +8,18 @@ boxes = [
         :name => "gitlab",
         :eth1 => "192.168.205.10",
         :mem => "3072",
-        :cpu => "1"
+        :cpu => "2"
     },
     {
         :name => "gitlab-ci",
         :eth1 => "192.168.205.11",
         :mem => "1024",
         :cpu => "1"
-    }，
+    },
     {
-        :name => "gitlab-dns",
+        :name => "dns-registry",
         :eth1 => "192.168.205.12",
-        :mem => "512",
+        :mem => "1024",
         :cpu => "1"
     }
 ]
@@ -44,5 +44,5 @@ Vagrant.configure(2) do |config|
         config.vm.network :private_network, ip: opts[:eth1]
       end
   end
-
+  config.vm.provision "shell", privileged: true, path: "./setup.sh"
 end
