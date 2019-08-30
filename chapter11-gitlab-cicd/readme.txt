@@ -21,7 +21,7 @@ docker exec -it dns-server /bin/sh
 vi /etc/resolv.dnsmasq
 添加内容
 nameserver 114.114.114.114 nameserver 8.8.8.8
-192.168.211.10 gitlab.example.com #gitlab-server 的ip
+192.168.205.10 gitlab.example.com #gitlab-server 的ip
 修改dnsmasq 文件，指定使用上述自定义的配置文件
 vi /etc/dnsmasq.conf
 resolv-file=/etc/resolv.dnsmasq addn-hosts=/etc/dnsmasqhosts
@@ -30,7 +30,7 @@ docker restart dns-server
 
 测试
 在gitlab-ci机器修改 sudo vim /etc/resolv.conf
-nameserver 192.168.99.100 #docker machine ip
+nameserver 192.168.205.12 #docker machine ip
 
 ping gitlab.example.com 
 在gitlab-ci创建一个container，然后在里面ping 
